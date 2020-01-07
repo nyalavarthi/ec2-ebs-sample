@@ -24,6 +24,11 @@ data "aws_ami" "example" {
 resource "aws_ebs_volume" "example" {
   availability_zone = "eu-central-1"
   size              = 1
+  tags = {
+    Name        = "NY-test-EBS"
+    Environment = "Sandbox",
+    Owner       = "Narendra Yalavarthi"
+  }
 }
 
 #create EC2 Instance
