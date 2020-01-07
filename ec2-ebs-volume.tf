@@ -22,8 +22,9 @@ data "aws_ami" "example" {
 
 # create EBS volume
 resource "aws_ebs_volume" "example" {
-  availability_zone = "eu-central-1"
+  availability_zone = "eu-central-1b"
   size              = 1
+  encrypted         = true
   tags = {
     Name        = "NY-test-EBS"
     Environment = "Sandbox",
